@@ -46,8 +46,8 @@ class AdminController extends Controller
         }
     }
 
-    public function dashboard()
+    public function createStaffGet()
     {
-        return view('dashboard');
+        return view('staff.create');
     }
 }

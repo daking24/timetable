@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 Route::get('/dashboard', [AdminController::class, 'showDashboard'])->name('dashboard');
 Route::post('/auth/login', [AdminController::class, 'login'])->name('login.post');
+Route::get('/staff/create', [AdminController::class, 'createStaffGet'])->name('staff.create');
