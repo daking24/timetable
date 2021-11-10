@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\LecturerController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,7 @@ Route::post('/lecturer/store', [LecturerController::class, 'store'])->name('lect
 Route::get('/lecturers', [LecturerController::class, 'index'])->name('lecturers.index');
 Route::get('/lecturers/edit/{id}', [LecturerController::class, 'edit'])->name('lecturers.edit');
 Route::post('/lecturers/update/{id}', [LecturerController::class, 'update'])->name('lecturers.update');
+
+
+Route::get('/create/courses', [CourseController::class, 'showCreateForm'])->name('create.courses');
 

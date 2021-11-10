@@ -80,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -90,6 +90,9 @@
     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
     </div>
 </footer>
+<<<<<<< HEAD
+@endsection
+=======
 
 <script type='text/javascript'>
     $("#rolesChange").change(function() {
@@ -98,12 +101,12 @@
         $('#staffOther').removeAttr('hidden');
         $('#staffOther').attr('required', '');
         $('#staffOther').attr('data-error', 'This field is required.');
-    } 
+    }
     else if ($(this).val() == "student") {
         $('#studentOtherDiv').show();
         $('#otherField').attr('required', '');
         $('#otherField').attr('data-error', 'This field is required.');
-    } 
+    }
     else {
         $('#otherFieldDiv').hide();
         $('#otherField').removeAttr('required');
@@ -115,3 +118,4 @@
 
     </script>
 @endsection
+>>>>>>> 6ec36fc282340e4f89892f32169c20d0e477a9dd
