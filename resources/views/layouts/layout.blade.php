@@ -305,7 +305,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Manage Staff</span>
+              <span class="menu-title">Manage Users</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
@@ -315,7 +315,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
               <i class="icon-image menu-icon"></i>
               <span class="menu-title">Advanced UI</span>
@@ -341,23 +341,23 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>                
+                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/forms/advanced_elements.html">Advanced Elements</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/forms/validation.html">Validation</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/forms/wizard.html">Wizard</a></li>
               </ul>
             </div>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#editors" aria-expanded="false" aria-controls="editors">
               <i class="icon-loader menu-icon"></i>
-              <span class="menu-title">Editors</span>
+              <span class="menu-title">Manage Department</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="editors">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/text_editor.html">Text editors</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/forms/code_editor.html">Code editors</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url('/create/department')}}">Create</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ route('view.department')}}">View</a></li>
               </ul>
             </div>
           </li>
@@ -531,19 +531,18 @@
           </li>
         </ul>
       </nav>
-      <!-- partial -->
       <div class="main-panel">
         @yield('main__content')
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-        
+
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
 
   <!-- plugins:js -->
   <script src="{{ asset('vendors/js/vendor.bundle.base.js') }}"></script>
