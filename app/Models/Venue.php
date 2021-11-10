@@ -9,7 +9,6 @@ class Venue extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'lectuerer_id',
         'time_tables_id',
         'course_id',
         'day',

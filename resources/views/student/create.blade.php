@@ -53,8 +53,8 @@
                 <div class="col-9 mb-4 mb-xl-0 mx-auto">
                     <div class="card cards mx-auto">
                         <div class="card-body">
-                            <h4 class="cardfont">Create Lecturer</h4>
-                            <p class="card-description">Add Leturers to the System</p>
+                            <h4 class="cardfont">Create Students</h4>
+                            <p class="card-description">Add Student to the System</p>
                             <form class="forms-sample" method="POST" action="">
                                 @csrf
                                 <div class="form-group">
@@ -69,6 +69,26 @@
                                 <label for="phone">Phone Number</label>
                                 <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
                                 </div>
+                                <div class="form-group">
+                                <label for="matric_no">Matric Number</label>
+                                <input type="text" class="form-control" id="matric_no" name="matric_no" placeholder="Matric Number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                    <select name="department" class="form-control" id="department" >
+                                        <option value="" selected>Select Department</option>
+                                        {{-- @foreach ($collection as $item) --}}
+                                            <option value="input value">Input Display</option>
+                                        {{-- @endforeach --}}
+                                        
+                                                                                
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                <label for="level">Level</label>
+                                <input type="text" class="form-control" id="level" name="level" placeholder="Level">
+                                </div>
 
                             <div class="col-lg-12 col-sm-12 d-block mt-3">
                                 <input class="btn btn-success" style="width: 100%" type="submit" value="Submit">
@@ -80,7 +100,7 @@
                     </div>
                 </div>
             </div>
-
+            
         </div>
     </div>
 </div>
@@ -90,32 +110,6 @@
     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
     </div>
 </footer>
-<<<<<<< HEAD
+
+
 @endsection
-=======
-
-<script type='text/javascript'>
-    $("#rolesChange").change(function() {
-    if ($(this).val() == "lecturer") {
-        $('#staffOtherDiv').show();
-        $('#staffOther').removeAttr('hidden');
-        $('#staffOther').attr('required', '');
-        $('#staffOther').attr('data-error', 'This field is required.');
-    }
-    else if ($(this).val() == "student") {
-        $('#studentOtherDiv').show();
-        $('#otherField').attr('required', '');
-        $('#otherField').attr('data-error', 'This field is required.');
-    }
-    else {
-        $('#otherFieldDiv').hide();
-        $('#otherField').removeAttr('required');
-        $('#otherField').removeAttr('data-error');
-    }
-    });
-    $("#rolesChange").trigger("change");
-
-
-    </script>
-@endsection
->>>>>>> 6ec36fc282340e4f89892f32169c20d0e477a9dd

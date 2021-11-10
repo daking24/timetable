@@ -15,8 +15,9 @@ class CreateLecturersTable extends Migration
     {
         Schema::create('lecturers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('code');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('phone')->unique();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
