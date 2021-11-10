@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Venue;
 use App\Models\TimeTable;
 use App\Models\Course;
+use App\Models\Lecturer;
 
 class VenueController extends Controller
 {
@@ -29,8 +30,8 @@ class VenueController extends Controller
     {
         $courses = Course::all();
         $lecturers = Lecturer::all();
-        $timetables = TimeTable::all();
-        return view('venue.create', compact('courses', 'lecturers', 'timetables'));
+        $time_tables = TimeTable::all();
+        return view('venue.create', compact('courses', 'lecturers', 'time_tables'));
     }
 
     /**
@@ -96,8 +97,8 @@ class VenueController extends Controller
         $venue = Venue::find($id);
         $courses = Course::all();
         $lecturers = Lecturer::all();
-        $timetables = TimeTable::all();
-        return view('venue.edit', compact('venue', 'courses', 'lecturers', 'timetables'));
+        $time_tables = TimeTable::all();
+        return view('venue.edit', compact('venue', 'courses', 'lecturers', 'time_tables'));
     }
 
     /**
@@ -113,7 +114,7 @@ class VenueController extends Controller
             $this->validate($request, [
                 'name' => 'required|string|max:255',
                 'course_id' => 'required|exists:courses,id',
-                'time_table_id' => 'required|exists:time_tables,id',
+                'time_tables_id' => 'required|exists:time_tables,id',
             ]);
 
             $input = $request->all();
