@@ -39,39 +39,44 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Course $courses, Request $request)
     {
-        try{
-            $data = validator::make($request->all(),[
+        try {
+
+            $this->validate($request, [
                 'department_id' => 'required|exists:departments,id',
                 'lecturer_id' => 'required|exists:lecturers,id',
-                'session' => 'required',
-                'semester' => 'required|string',
-                'level' => 'required',
-                'title' => 'required|string|max:255',
-                'code' => 'required|string|max:10',
-                'units' => 'required|string',
+
             ]);
-            if ($validator->fails()){
-                return redirect()
-                     ->back()
-                     ->withErrors($validator);
-            }
-            $course = Course::create($data);
-            dd($course);
+           $input = $request->all();
+           $input['lecturer_id'] = $request->input('lecturer_id');
+           $input['department_id'] = $request->input('department_id');
+           $input['code'] = $request->input('code');
+           $input['level'] = $request->input('level');
+           $input['title'] = $request->input('title');
+           $input['units'] = $request->input('units');
+           $input['session'] = $request->input('session');
+           $input['semester'] = $request->input('semester');
+            
+           $course = Course::create($input);
+        //    ddd($student);
             if (!$course) {
                 return redirect()
-                     ->back()
-                     ->withErrors($course);
+                    ->back()
+                    ->withErrors($course);
             } else {
                 return redirect()
-                     ->back()
-                     ->with('message', 'Course Created Successfully!');
-            }
-        } catch (\Exception $e)
-        {
-            return redirect()->back()->with('error', $e->getMessage());
+                    ->back()
+                    ->with('message', 'Course Created successfully!' );
+
+                }
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->withErrors($e->getMessage());
         }
+
+
     }
 
     /**

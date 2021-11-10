@@ -92,8 +92,8 @@
                         <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
                             <label for="semester_name">Semester</label>
                             <select name="semester" class="form-control form-select" id="semester">
-                                <option>First Semester</option>
-                                <option>Second Semester</option>
+                                <option value="1">First Semester</option>
+                                <option value="2">Second Semester</option>
                                 </select>
                             <small class="fs-6 fw-light text-muted" style="letter-spacing: .2pt;">Semester is required!</small>
                         </div>

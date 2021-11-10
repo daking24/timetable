@@ -53,29 +53,29 @@
                     <div class="col-9 mb-4 mb-xl-0 mx-auto">
                         <div class="card cards mx-auto">
                             <div class="card-body">
-                                <h4 class="cardfont">Create Students</h4>
-                                <p class="card-description">Add Student to the System</p>
-                            <form class="forms-sample" method="POST" action="{{ route('create.student.post')}}">
+                                <h4 class="cardfont"></h4>
+                                <p class="card-description">Edit {{$students->name}} Student to the System</p>
+                                <form class="forms-sample" method="POST" action="{{ route('update.student', $students->id)}}">
                                     @csrf
                                     <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                    <input type="text" class="form-control" id="name" name="name" value="{{$students->name}}" placeholder="Name">
                                     </div>
                                     <div class="form-group">
                                     <label for="email">Email address</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                    <input type="email" class="form-control" id="email" name="email"  value="{{$students->email}}" placeholder="Email">
                                     </div>
                                     <div class="form-group">
                                     <label for="phone">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+                                    <input type="tel" class="form-control" id="phone" name="phone"  value="{{$students->phone}}" placeholder="Phone Number">
                                     </div>
                                     <div class="form-group">
                                     <label for="matric_no">Matric Number</label>
-                                    <input type="text" class="form-control" id="matric_no" name="matric_no" placeholder="Matric Number">
+                                    <input type="text" class="form-control" id="matric_no" name="matric_no" value="{{$students->matric_no}}" placeholder="Matric Number">
                                     </div>
                                     <div class="form-group">
                                             <label for="title">Department</label>
-                                            <select name="department_id" id="department_id" class="form-control">
+                                            <select name="department_id" id="department_id" value="{{$students['department']->name}}" class="form-control">
                                                 @foreach($departments as $department)
                                                     <option value="{{ $department->id }}">{{ $department->name }}</option>
                                                 @endforeach
@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="form-group">
                                             <label for="title">Level</label>
-                                            <select name="level" id="level" class="form-control">
+                                            <select name="level" id="level"  value="{{$students->level}}" class="form-control">
                                                 <option value="100">100</option>
                                                 <option value="200">200</option>
                                                 <option value="300">300</option>

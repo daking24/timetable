@@ -310,6 +310,8 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('create.student')}}">Create Student</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('view.student')}}">View Student</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('lecturers.create') }}">Create Lecturers</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('lecturers.index') }}">View Lecturers</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">Create Students</a></li>
@@ -559,7 +561,7 @@
   <script src="{{ asset('js/dashboard.js') }}"></script>
   <script src="{{ asset('js/Chart.roundedBarCharts.js') }}"></script>
   <!-- End custom js for this page-->
-  
+
 </body>
 
 </html>
