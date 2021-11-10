@@ -50,8 +50,8 @@
     <div class="row">
         <div class="col-md-12 grid-margin mx-auto">
             <div class="row">
-                <div class="col-12 mb-4 mb-xl-0">
-                    <div class="card">
+                <div class="col-9 mb-4 mb-xl-0 mx-auto">
+                    <div class="card cards mx-auto">
                         <div class="card-body">
                             <h4 class="cardfont">Create User</h4>
                             <p class="card-description">Add Users to the System</p>

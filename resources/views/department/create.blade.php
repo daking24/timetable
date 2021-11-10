@@ -24,9 +24,7 @@
     }
 </style>
 <div class="content-wrapper">
-    <div style="padding-top: 1rem; padding-bottom: 1rem;">
-        <a href="" class="btn outlining btn-sm">Back to Previous Page</a>
-    </div>
+    
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
