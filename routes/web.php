@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,9 @@ Route::post('/update/department/{id}', [DepartmentController::class, 'updateDepa
 Route::get('/staff/create', [AdminController::class, 'createStaffGet'])->name('staff.create');
 
 Route::get('/create/courses', [CourseController::class, 'showCreateForm'])->name('create.courses');
+Route::post('/create/student', [StudentController::class, 'createStudent'])->name('create.student.post');
+Route::get('/create/student', [StudentController::class, 'CreateForm'])->name('create.student');
+Route::get('/view/student', [StudentController::class, 'viewStudent'])->name('view.student');
+Route::get('/edit/student/{id}', [StudentController::class, 'editStudent'])->name('edit.student');
+Route::post('/update/student/{id}', [StudentController::class, 'updateStudent'])->name('update.student');
 

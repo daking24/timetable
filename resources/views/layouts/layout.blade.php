@@ -312,6 +312,8 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ route('staff.create') }}">Create</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('create.student')}}">Create Student</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{ route('view.student')}}">View Student</a></li>
               </ul>
             </div>
           </li>
@@ -558,7 +560,7 @@
   <script src="{{ asset('js/dashboard.js') }}"></script>
   <script src="{{ asset('js/Chart.roundedBarCharts.js') }}"></script>
   <!-- End custom js for this page-->
-  
+
 </body>
 
 </html>
