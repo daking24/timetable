@@ -9,14 +9,10 @@ class Lecturer extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
-        'code',
+        'name',
+        'email',
+        'phone',
         'is_active',
 
     ];
-
-    public function lecturer()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
 }

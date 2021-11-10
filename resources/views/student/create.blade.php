@@ -53,53 +53,42 @@
                 <div class="col-9 mb-4 mb-xl-0 mx-auto">
                     <div class="card cards mx-auto">
                         <div class="card-body">
-                            <h4 class="cardfont">Create Venue</h4>
-                            <p class="card-description">Add Venue to the System</p>
+                            <h4 class="cardfont">Create Students</h4>
+                            <p class="card-description">Add Student to the System</p>
                             <form class="forms-sample" method="POST" action="">
                                 @csrf
                                 <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                                 </div>
-
                                 <div class="form-group">
-                                    <label for="course">Course</label>
-                                    <select name="course" class="form-control" id="course" >
-                                        <option value="" selected>Select Course</option>
-                                        @foreach ($courses as $course)
-                                            <option value="{{ $course->id }}">{{ $course->name }}</option>
-                                        @endforeach
-
-                                    </select>
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                                 </div>
-
                                 <div class="form-group">
-                                    <label for="time_table">Time Table</label>
-                                    <select name="time_table" class="form-control" id="time_table" >
-                                        <option value="" selected>Select Time Table</option>
-                                        @foreach ($time_tables as $time_table)
-                                            <option value="{{ $time_table->id }}">{{ $time_table->name }}</option>
-                                        @endforeach
-
-                                    </select>
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
                                 </div>
-
                                 <div class="form-group">
-                                    <label for="day">Day</label>
-                                    <select name="day" class="form-control" id="day" >
-                                        <option value="" selected>Select Day</option>
-                                        <option value="mon">Monday</option>
-                                        <option value="tues">Tuesday</option>
-                                        <option value="wed">Wednesday</option>
-                                        <option value="thurs">Thursday</option>
-                                        <option value="fri">Friday</option>
-                                        <option value="sat">Saturday</option>
+                                <label for="matric_no">Matric Number</label>
+                                <input type="text" class="form-control" id="matric_no" name="matric_no" placeholder="Matric Number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                    <select name="department" class="form-control" id="department" >
+                                        <option value="" selected>Select Department</option>
+                                        {{-- @foreach ($collection as $item) --}}
+                                            <option value="input value">Input Display</option>
+                                        {{-- @endforeach --}}
                                         
+                                                                                
 
                                     </select>
                                 </div>
-
-                                
+                                <div class="form-group">
+                                <label for="level">Level</label>
+                                <input type="text" class="form-control" id="level" name="level" placeholder="Level">
+                                </div>
 
                             <div class="col-lg-12 col-sm-12 d-block mt-3">
                                 <input class="btn btn-success" style="width: 100%" type="submit" value="Submit">
@@ -111,7 +100,7 @@
                     </div>
                 </div>
             </div>
-
+            
         </div>
     </div>
 </div>
@@ -121,5 +110,6 @@
     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
     </div>
 </footer>
+
 
 @endsection

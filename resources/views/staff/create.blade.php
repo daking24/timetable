@@ -53,8 +53,8 @@
                 <div class="col-9 mb-4 mb-xl-0 mx-auto">
                     <div class="card cards mx-auto">
                         <div class="card-body">
-                            <h4 class="cardfont">Create User</h4>
-                            <p class="card-description">Add Users to the System</p>
+                            <h4 class="cardfont">Create Lecturer</h4>
+                            <p class="card-description">Add Leturers to the System</p>
                             <form class="forms-sample" method="POST" action="">
                                 @csrf
                                 <div class="form-group">
@@ -65,15 +65,9 @@
                                 <label for="email">Email address</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                                 </div>
-                                
                                 <div class="form-group">
-                                    <label for="role">Role</label>
-                                    <select name="role" class="form-control" id="rolesChange" >
-                                        <option value="">Select Role</option>
-                                        <option value="lecturer">Lecturer</option>
-                                        <option value="student">Student</option>
-                                            
-                                    </select>
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
                                 </div>
 
                             <div class="col-lg-12 col-sm-12 d-block mt-3">
