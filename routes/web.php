@@ -40,5 +40,6 @@ Route::get('/lecturers/edit/{id}', [LecturerController::class, 'edit'])->name('l
 Route::post('/lecturers/update/{id}', [LecturerController::class, 'update'])->name('lecturers.update');
 
 
-Route::get('/create/courses', [CourseController::class, 'showCreateForm'])->name('create.courses');
+Route::get('/create/courses', [CourseController::class, 'create'])->name('courses.create');
+Route::post('/store/courses', [CourseController::class, 'store'])->name('courses.store');
 

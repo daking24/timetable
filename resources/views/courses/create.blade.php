@@ -73,7 +73,7 @@
 
                 <h4 class="cardfont">Create Course</h4>
                 <p class="card-description">Add Courses</p>
-                <form g-3 needs-validation method="Post" action="" class="form-sample">
+                <form g-3 needs-validation method="Post" action="{{ route('courses.store') }}" class="form-sample">
                     @csrf
                     <div class="row">
                         <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
@@ -101,7 +101,7 @@
 
                         <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
                             <label class="form-label">Unit</label>
-                            <input name="unit" type="tel" placeholder="Unit" min="0" class="form-control" id="unit" required />
+                            <input name="units" type="number" placeholder="Unit" min="0" class="form-control" id="unit" required />
                             <small class="fs-6 fw-light text-muted" style="letter-spacing: .2pt;">Credit Load is required and it's unique!</small>
                         </div>
 
@@ -109,7 +109,7 @@
                         <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
                                 <div class="form-group">
                                         <label for="title">Department</label>
-                                        <select name="dept" id="department" class="form-control">
+                                        <select name="department_id" id="department" class="form-control">
                                             @foreach($departments as $department)
                                                 <option value="{{ $department->id }}">{{ $department->name }}</option>
                                             @endforeach
@@ -144,7 +144,7 @@
                         <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
                             <div class="form-group">
                                 <label for="title">Session</label>
-                                <input type="text" class="form-control" value="2017/2018" name="session">
+                                <input type="text" class="form-control" placeholder="2017/2018" name="session">
                             </div>
                         </div>
 
