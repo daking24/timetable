@@ -380,15 +380,14 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">Time Table</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/data-table.html">Data table</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/js-grid.html">Js-grid</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/sortable-table.html">Sortable table</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{ route('create.timetable')}}">Create</a></li>
+               <li class="nav-item"> <a class="nav-link" href="">View</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{ route('create.setting')}}">Settings</a></li>
               </ul>
             </div>
           </li>

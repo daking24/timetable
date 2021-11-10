@@ -68,77 +68,58 @@
                 @endforeach
             @endif
 
-            <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="panel panel-default">
-                                <div class="panel-heading" style="overflow: hidden;">
-                                    <h4 class="text-center" style="text-transform: uppercase">
-                                        {{ strtoupper($institution) }}<br><br>
-                                        <strong>{{ $condition['semester'] }} Semester TimeTable</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button class="btn btn-success" onclick="printElem()">Print</button>
-                                    </h4>
-                                </div>
+            <div class="card cards">
+                    <div class="card-body my-2 mx-4">
 
-                                <div class="panel-body" id="printArea">
+                      <h4 class="cardfont">Generate Timetable</h4>
+                      <p class="card-description">Add Timetable</p>
+                    <form g-3 needs-validation method="Post" action="{{ route('create.timetable.post')}}" class="form-sample">
+                          @csrf
+                          <div class="row">
+                              <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
+                                    <div class="form-group">
+                                            <label for="department">Department</label>
+                                            <select name="department" id="department" class="form-control">
+                                                @foreach($departments as $department)
+                                                    <option value="{{ $department->id }}" {{ request('dept') == $department->id? 'SELECTED' : '' }}>{{ $department->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                              </div>
 
-                                    @if(count($schedule))
-                                        <table class="table table-responsive table-striped table-bordered">
-                                            <tr>
-                                                <th></th>
-                                                <th>8 - 9</th>
-                                                <th>9 - 10</th>
-                                                <th>10 - 11</th>
-                                                <th>11 - 12</th>
-                                                <th>12 - 1</th>
-                                                <th>1 - 2</th>
-                                                <th>2 - 3</th>
-                                                <th>3 - 4</th>
-                                                <th>4 - 5</th>
-                                            </tr>
 
-                                            @foreach($schedule as $day)
-                                                <tr>
-                                                    <td>{{ $daysLabel[$loop->index] }}</td>
-                                                    @foreach($day as $item)
-                                                        <td>
-                                                            <strong>{{ $item }}</strong><br>
-                                                            <small>{!! optional($venues)[$item] !!}</small>
-                                                        </td>
-                                                    @endforeach
-                                                </tr>
-                                            @endforeach
-                                        </table>
+                              <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
+                                    <label for="level">Level</label>
+                                    <select name="level" id="level" class="form-control">
+                                        @for($x = 100; $x <= 700; $x += 100)
+                                            <option value="{{ $x }}" {{ request('level') == $x ? 'SELECTED' : '' }}>{{ $x }}</option>
+                                        @endfor
+                                    </select>
+                              </div>
 
-                                    @else
-                                        <p class="text-center text-danger">No schedule available</p>
-                                    @endif
+                              <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
+                                    <label for="semester_name">Semester</label>
+                                    <select name="semester" class="form-control form-select" id="semester">
+                                        <option>First Semester</option>
+                                        <option>Second Semester</option>
+                                    </select>
+                              </div>
 
-                                </div>
-                            </div>
-                        </div>
+
+                              <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
+                                    <div class="form-group">
+                                            <label for="semester">Session</label>
+                                            <input type="text" name="session" class="form-control" value="2017/2018">
+                                    </div>
+                              </div>
+
+                          </div>
+                          <div class="col-lg-12 col-sm-12 d-block mt-3">
+                              <input class="btn btn-success" style="width: 100%" type="submit" value="Create">
+                          </div>
+                      </form>
                     </div>
-                </div>
-
-                <script>
-                    function printElem() {
-                        var content = document.getElementById('printArea').innerHTML;
-                        var mywindow = window.open('', 'Print', 'height=900,width=800');
-
-                        mywindow.document.write('<html><head><title>Print</title>');
-                        mywindow.document.write('</head><body >');
-                        mywindow.document.write("<span style=\"text-align:center;\">{{ $institution }}</span>");
-                        mywindow.document.write(content);
-                        mywindow.document.write('</body></html>');
-
-                        mywindow.document.close();
-                        mywindow.focus();
-                        mywindow.print();
-                        mywindow.close();
-                        return true;
-                    }
-                </script>
-
+                  </div>
 
 
 

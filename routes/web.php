@@ -6,6 +6,8 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TimeTableController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,4 +49,9 @@ Route::get('/create/student', [StudentController::class, 'CreateForm'])->name('c
 Route::get('/view/student', [StudentController::class, 'viewStudent'])->name('view.student');
 Route::get('/edit/student/{id}', [StudentController::class, 'editStudent'])->name('edit.student');
 Route::post('/update/student/{id}', [StudentController::class, 'updateStudent'])->name('update.student');
+
+Route::get('/create/timetable', [TimeTableController::class, 'showCreateForm'])->name('create.timetable');
+Route::post('/create/timetable', [TimeTableController::class, 'generate'])->name('create.timetable.post');
+Route::get('/create/setting', [SettingController::class, 'showCreateFormSetting'])->name('create.setting');
+Route::post('/create/setting', [SettingController::class, 'store'])->name('create.setting.post');
 
