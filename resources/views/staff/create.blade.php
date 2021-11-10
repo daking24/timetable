@@ -68,13 +68,14 @@
                                 
                                 <div class="form-group">
                                     <label for="role">Role</label>
-                                    <select name="role" class="form-control" id="role" >
+                                    <select name="role" class="form-control" id="rolesChange" >
                                         <option value="">Select Role</option>
                                         <option value="lecturer">Lecturer</option>
                                         <option value="student">Student</option>
                                             
                                     </select>
                                 </div>
+
                             <div class="col-lg-12 col-sm-12 d-block mt-3">
                                 <input class="btn btn-success" style="width: 100%" type="submit" value="Submit">
                             </div>
@@ -95,4 +96,28 @@
     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
     </div>
 </footer>
+
+<script type='text/javascript'>
+    $("#rolesChange").change(function() {
+    if ($(this).val() == "lecturer") {
+        $('#staffOtherDiv').show();
+        $('#staffOther').removeAttr('hidden');
+        $('#staffOther').attr('required', '');
+        $('#staffOther').attr('data-error', 'This field is required.');
+    } 
+    else if ($(this).val() == "student") {
+        $('#studentOtherDiv').show();
+        $('#otherField').attr('required', '');
+        $('#otherField').attr('data-error', 'This field is required.');
+    } 
+    else {
+        $('#otherFieldDiv').hide();
+        $('#otherField').removeAttr('required');
+        $('#otherField').removeAttr('data-error');
+    }
+    });
+    $("#rolesChange").trigger("change");
+
+
+    </script>
 @endsection
