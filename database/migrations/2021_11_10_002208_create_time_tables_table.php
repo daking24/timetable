@@ -15,12 +15,12 @@ class CreateTimeTablesTable extends Migration
     {
         Schema::create('time_tables', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('dept');
+            $table->foreignId('department_id');
             $table->string('semester');
-            $table->foreignId('level');
+            $table->string('level');
             $table->string('session');
             $table->text('schedule');
-            $table->boolean('is_active')->default('true');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

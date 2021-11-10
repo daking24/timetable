@@ -15,15 +15,15 @@ class CreateVenuesTable extends Migration
     {
         Schema::create('venues', function (Blueprint $table) {
             $table->id();
-            $tade->foreignId('time_tables_Id');
+            $table->foreignId('time_tables_Id');
             $table->string('name');
             $table->boolean('is_in_use')->default(FALSE);
-            $table->string('course_id')->nullable();
-            $table->string('lecturer_id')->nullable();
+            $table->foreignId('course_id')->nullable();
+            $table->foreignId('lecturer_id')->nullable();
             $table->string('day')->nullable();
             $table->string('start')->nullable();
             $table->string('stop')->nullable();
-            $table->boolean('is_active')->default('true');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
