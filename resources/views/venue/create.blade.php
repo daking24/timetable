@@ -99,6 +99,15 @@
                                     </select>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="start_time">Start Time</label>
+                                    <input type="time" class="form-control" id="start_time" name="start_time" placeholder="Start Time">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="end_time">End Time</label>
+                                    <input type="time" class="form-control" id="end_time" name="end_time" placeholder="End Time">
+                                </div>
                                 
 
                             <div class="col-lg-12 col-sm-12 d-block mt-3">
