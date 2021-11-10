@@ -6,6 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\VenueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +53,11 @@ Route::get('/create/student', [StudentController::class, 'CreateForm'])->name('c
 Route::get('/view/student', [StudentController::class, 'viewStudent'])->name('view.student');
 Route::get('/edit/student/{id}', [StudentController::class, 'editStudent'])->name('edit.student');
 Route::post('/update/student/{id}', [StudentController::class, 'updateStudent'])->name('update.student');
+
+Route::get('/create/venue', [VenueController::class, 'create'])->name('venues.create');
+Route::post('/store/venue', [VenueController::class, 'store'])->name('venues.store');
+Route::get('/venues', [VenueController::class, 'index'])->name('venues.index');
+Route::get('/venues/edit/{id}', [VenueController::class, 'edit'])->name('venues.edit'); 
+Route::post('/venues/update/{id}', [VenueController::class, 'update'])->name('venues.update');
+
 

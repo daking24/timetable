@@ -180,29 +180,15 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">Manage Venues</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/data-table.html">Data table</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/js-grid.html">Js-grid</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/sortable-table.html">Sortable table</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('venues.create') }}">Create Venues</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('venues.index') }}">View Venues</a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/ui-features/popups.html">
-              <i class="icon-open menu-icon"></i>
-              <span class="menu-title">Popups</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/ui-features/notifications.html">
-              <i class="icon-esc menu-icon"></i>
-              <span class="menu-title">Notifications</span>
-            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
