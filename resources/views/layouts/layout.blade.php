@@ -310,7 +310,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Create</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('staff.create') }}">Create</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">View</a></li>
               </ul>
             </div>
@@ -532,18 +532,13 @@
         </ul>
       </nav>
       <div class="main-panel">
-            <!--  content-wrapper starts -->
+        @yield('main__content')
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
 
-            @yield('main__content')
-            <!-- content-wrapper ends -->
-
-            <!--    footer starts here  -->
-            {{-- @yield('footer') --}}
-            <!--    footer ends here    -->
-
-            <!-- partial -->
-        </div>
-  <!-- main-panel ends -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
     </div>
 <!-- page-body-wrapper ends -->
 </div>

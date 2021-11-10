@@ -28,3 +28,4 @@ Route::get('/view/department', [DepartmentController::class, 'viewDepartment'])-
 Route::get('/edit/department/{id}', [DepartmentController::class, 'editDepartment'])->name('edit.department');
 Route::post('/update/department/{id}', [DepartmentController::class, 'updateDepartment'])->name('update.department');
 
+Route::get('/staff/create', [AdminController::class, 'createStaffGet'])->name('staff.create');
