@@ -8,6 +8,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TimeTableController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\VenueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,12 @@ Route::get('/lecturers/edit/{id}', [LecturerController::class, 'edit'])->name('l
 Route::post('/lecturers/update/{id}', [LecturerController::class, 'update'])->name('lecturers.update');
 
 
-Route::get('/create/courses', [CourseController::class, 'showCreateForm'])->name('create.courses');
+Route::get('/create/courses', [CourseController::class, 'create'])->name('courses.create');
+Route::post('/store/courses', [CourseController::class, 'store'])->name('courses.store');
+Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+Route::get('/courses/edit/{id}', [CourseController::class, 'edit'])->name('courses.edit');
+Route::post('/courses/update/{id}', [CourseController::class, 'update'])->name('courses.update');
+
 Route::post('/create/student', [StudentController::class, 'createStudent'])->name('create.student.post');
 Route::get('/create/student', [StudentController::class, 'CreateForm'])->name('create.student');
 Route::get('/view/student', [StudentController::class, 'viewStudent'])->name('view.student');
@@ -54,4 +60,10 @@ Route::get('/create/timetable', [TimeTableController::class, 'showCreateForm'])-
 Route::post('/create/timetable', [TimeTableController::class, 'generate'])->name('create.timetable.post');
 Route::get('/create/setting', [SettingController::class, 'showCreateFormSetting'])->name('create.setting');
 Route::post('/create/setting', [SettingController::class, 'store'])->name('create.setting.post');
+Route::get('/create/venue', [VenueController::class, 'create'])->name('venues.create');
+Route::post('/store/venue', [VenueController::class, 'store'])->name('venues.store');
+Route::get('/venues', [VenueController::class, 'index'])->name('venues.index');
+Route::get('/venues/edit/{id}', [VenueController::class, 'edit'])->name('venues.edit');
+Route::post('/venues/update/{id}', [VenueController::class, 'update'])->name('venues.update');
+
 

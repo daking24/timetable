@@ -53,18 +53,18 @@
                 <div class="col-9 mb-4 mb-xl-0 mx-auto">
                     <div class="card cards mx-auto">
                         <div class="card-body">
-                            <h4 class="cardfont">Create Venue</h4>
-                            <p class="card-description">Add Venue to the System</p>
-                            <form class="forms-sample" method="POST" action="{{ route('venues.store') }}">
+                            <h4 class="cardfont">Update Venue ({{ $venue->name }}) Details</h4>
+                            <p class="card-description">Update Current Venue Details</p>
+                            <form class="forms-sample" method="POST" action="{{ route('venues.update', $venue->id) }}">
                                 @csrf
                                 <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') ?? $venue->name }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="course">Course</label>
-                                    <select name="course_id" class="form-control" id="course" >
+                                    <select name="course_id" class="form-control" id="course" value="{{ old('course_id') ?? $venue->course_id }}" >
                                         <option value="" selected>Select Course</option>
                                         @foreach ($courses as $course)
                                             <option value="{{ $course->id }}">{{ $course->name }}</option>
@@ -75,7 +75,7 @@
 
                                 <div class="form-group">
                                     <label for="time_table">Time Table</label>
-                                    <select name="time_tables_id" class="form-control" id="time_table" >
+                                    <select name="time_tables_id" class="form-control" id="time_table" value="{{ old('time_tables_id') ?? $venue->time_tables_id }}">
                                         <option value="" selected>Select Time Table</option>
                                         @foreach ($time_tables as $time_table)
                                             <option value="{{ $time_table->id }}">{{ $time_table->name }}</option>
@@ -86,7 +86,7 @@
 
                                 <div class="form-group">
                                     <label for="day">Day</label>
-                                    <select name="day" class="form-control" id="day" >
+                                    <select name="day" class="form-control" id="day" value="{{ old('day') ?? $venue->day }}">
                                         <option value="" selected>Select Day</option>
                                         <option value="mon">Monday</option>
                                         <option value="tues">Tuesday</option>
@@ -100,17 +100,17 @@
 
                                 <div class="form-group">
                                     <label for="start_time">Start Time</label>
-                                    <input type="time" class="form-control" id="start_time" name="start" placeholder="Start Time">
+                                    <input type="time" class="form-control" id="start_time" name="start" placeholder="Start Time" value="{{ old('start') ?? $venue->start }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="end_time">End Time</label>
-                                    <input type="time" class="form-control" id="end_time" name="stop" placeholder="End Time">
+                                    <input type="time" class="form-control" id="end_time" name="stop" placeholder="End Time" value="{{ old('stop') ?? $venue->stop }}">
                                 </div>
                                 
 
                             <div class="col-lg-12 col-sm-12 d-block mt-3">
-                                <input class="btn btn-success" style="width: 100%" type="submit" value="Submit">
+                                <input class="btn btn-success" style="width: 100%" type="submit" value="Update">
                             </div>
 
                             </form>
