@@ -310,8 +310,9 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ route('staff.create') }}">Create</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('lecturers.create') }}">Create Lecturers</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('lecturers.index') }}">View Lecturers</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Create Students</a></li>
               </ul>
             </div>
           </li>

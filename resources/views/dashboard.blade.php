@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('layouts.layout')
 
-@section('main-panel')
+@section('main__content')
 <div class="content-wrapper">
     <div class="row">
     <div class="col-md-12 grid-margin">

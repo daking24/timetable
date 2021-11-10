@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\LecturerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,12 @@ Route::get('/view/department', [DepartmentController::class, 'viewDepartment'])-
 Route::get('/edit/department/{id}', [DepartmentController::class, 'editDepartment'])->name('edit.department');
 Route::post('/update/department/{id}', [DepartmentController::class, 'updateDepartment'])->name('update.department');
 
-Route::get('/staff/create', [AdminController::class, 'createStaffGet'])->name('staff.create');
+
+
+// Route::('lecturers', LecturerController::class);
+Route::get('/lecturer/create', [LecturerController::class, 'create'])->name('lecturers.create');
+Route::post('/lecturer/store', [LecturerController::class, 'store'])->name('lecturers.store');
+Route::get('/lecturers', [LecturerController::class, 'index'])->name('lecturers.index');
+Route::get('/lecturers/edit/{id}', [LecturerController::class, 'edit'])->name('lecturers.edit');
+Route::post('/lecturers/update/{id}', [LecturerController::class, 'update'])->name('lecturers.update');
+
