@@ -43,6 +43,9 @@ Route::post('/lecturers/update/{id}', [LecturerController::class, 'update'])->na
 
 Route::get('/create/courses', [CourseController::class, 'create'])->name('courses.create');
 Route::post('/store/courses', [CourseController::class, 'store'])->name('courses.store');
+Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+Route::get('/courses/edit/{id}', [CourseController::class, 'edit'])->name('courses.edit');
+Route::post('/courses/update/{id}', [CourseController::class, 'update'])->name('courses.update');
 
 Route::post('/create/student', [StudentController::class, 'createStudent'])->name('create.student.post');
 Route::get('/create/student', [StudentController::class, 'CreateForm'])->name('create.student');

@@ -17,8 +17,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
-        return view('courses.index', compact('courses'));
+        $courses = Course::with('lecturer', 'department')->get();
+        return view('courses.view', compact('courses'));
     }
 
     /**
@@ -85,9 +85,83 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Course $courses, $id)
     {
-        
+        $course = Course::with('lecturer', 'department')->find($id);
+        return view('courses.edit', compact('course'));
+    }
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Course $courses, $id)
+    {
+        $course = Course::with('lecturer', 'department')->find($id);
+        $departments = Department::all();
+        $lecturers = Lecturer::all();
+        return view('courses.edit', compact('course', 'departments', 'lecturers'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Course $courses, Request $request, $id)
+    {
+        try {
+            $this->validate($request, [
+                'department_id' => 'required|exists:departments,id',
+                'lecturer_id' => 'required|exists:lecturers,id',
+
+            ]);
+            $input = $request->all();
+            $input['lecturer_id'] = $request->input('lecturer_id');
+            $input['department_id'] = $request->input('department_id');
+            $input['code'] = $request->input('code');
+            $input['level'] = $request->input('level');
+            $input['title'] = $request->input('title');
+            $input['units'] = $request->input('units');
+            $input['session'] = $request->input('session');
+            $input['semester'] = $request->input('semester');
+            $course = Course::find($id);
+            $course->update($input);
+            if (!$course) {
+                return redirect()
+                    ->back()
+                    ->withErrors($course);
+            } else {
+                return redirect()
+                    ->back()
+                    ->with('message', 'Course Updated successfully!' );
+
+                }
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->withErrors($e->getMessage());
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Course $courses, $id)
+    {
+        $course = Course::find($id);
+        $course->delete();
+        return redirect()
+            ->back()
+            ->with('message', 'Course Deleted successfully!' );
     }
 
 
