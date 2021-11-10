@@ -31,7 +31,8 @@
               </div>
               <h4>Welcome back!</h4>
               <h6 class="font-weight-light">Happy to see you again!</h6>
-              <form class="pt-3">
+            <form class="pt-3" method="POST" action="{{ route('login.post')}}">
+                  @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail">E-mail</label>
                   <div class="input-group">
@@ -40,7 +41,7 @@
                         <i class="ti-user text-primary"></i>
                       </span>
                     </div>
-                    <input type="email" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="E-mail">
+                    <input type="email" class="form-control form-control-lg border-left-0" name="email" id="email" placeholder="E-mail">
                   </div>
                 </div>
                 <div class="form-group">
@@ -51,23 +52,12 @@
                         <i class="ti-lock text-primary"></i>
                       </span>
                     </div>
-                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">
+                    <input type="password" class="form-control form-control-lg border-left-0"name="password" id="password" placeholder="Password">
                   </div>
-                </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    </label>
-                  </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
                 </div>
                 <div class="my-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">LOGIN</a>
-                </div>
-                <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register-2.html" class="text-primary">Create</a>
+                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Login</button>
+                    
                 </div>
               </form>
             </div>
