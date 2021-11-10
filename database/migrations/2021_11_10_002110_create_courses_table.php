@@ -24,7 +24,7 @@ class CreateCoursesTable extends Migration
             $table->string('session');
             $table->integer('level');
             $table->boolean('general')->default(FALSE);
-            $table->boolean('is_active')->default('true');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
