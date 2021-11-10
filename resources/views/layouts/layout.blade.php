@@ -364,19 +364,13 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Manage Courses</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/morris.html">Morris</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/flot-chart.html">Flot</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/google-charts.html">Google charts</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/sparkline.html">Sparkline js</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/c3.html">C3 charts</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartist.html">Chartists</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/justGage.html">JustGage</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/create/courses')}}">Create</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">View</a></li>
               </ul>
             </div>
           </li>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::get('/edit/department/{id}', [DepartmentController::class, 'editDepartmen
 Route::post('/update/department/{id}', [DepartmentController::class, 'updateDepartment'])->name('update.department');
 
 Route::get('/staff/create', [AdminController::class, 'createStaffGet'])->name('staff.create');
+
+Route::get('/create/courses', [CourseController::class, 'showCreateForm'])->name('create.courses');
+

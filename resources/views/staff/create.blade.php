@@ -65,15 +65,9 @@
                                 <label for="email">Email address</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                                 </div>
-                                
                                 <div class="form-group">
-                                    <label for="role">Role</label>
-                                    <select name="role" class="form-control" id="role" >
-                                        <option value="">Select Role</option>
-                                        <option value="lecturer">Lecturer</option>
-                                        <option value="student">Student</option>
-                                            
-                                    </select>
+                                    <label for="phone">Phone number</label>
+                                    <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone number">
                                 </div>
                             <div class="col-lg-12 col-sm-12 d-block mt-3">
                                 <input class="btn btn-success" style="width: 100%" type="submit" value="Submit">
@@ -85,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
