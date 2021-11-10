@@ -119,6 +119,16 @@
 
                         <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
                                 <div class="form-group">
+                                        <label for="title">Lecturer</label>
+                                        <select name="lecturer_id" id="lecturer_id" class="form-control">
+                                            @foreach($lecturers as $lecturer)
+                                                <option value="{{ $lecturer->id }}">{{ $lecturer->name }}</option>
+                                            @endforeach
+                                        </select>
+                                </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-md-6 mb-3">
+                                <div class="form-group">
                                         <label for="title">Level</label>
                                         <select name="level" id="level" class="form-control">
                                             <option value="100">100</option>

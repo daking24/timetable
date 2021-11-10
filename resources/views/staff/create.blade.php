@@ -55,7 +55,7 @@
                         <div class="card-body">
                             <h4 class="cardfont">Create Lecturer</h4>
                             <p class="card-description">Add Leturers to the System</p>
-                            <form class="forms-sample" method="POST" action="">
+                            <form class="forms-sample" method="POST" action="{{ route('lecturers.store') }}">
                                 @csrf
                                 <div class="form-group">
                                 <label for="name">Name</label>
