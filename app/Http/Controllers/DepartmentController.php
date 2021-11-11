@@ -7,6 +7,11 @@ use App\Models\Department;
 
 class DepartmentController extends Controller
 {
+    public function create()
+    {
+        return view('department.create');
+    }
+    
     public function createDepartment(Department $department, Request $request)
     {
         try{

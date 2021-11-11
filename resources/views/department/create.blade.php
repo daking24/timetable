@@ -69,7 +69,7 @@
             <h4 class="cardfont">Create Department</h4>
             <div class="row">
                 <div class="col-12">
-                <form method="POST" action="{{ route('create.department.post')}}" class="forms-sample">
+                <form method="POST" action="{{ route('department.store') }}" class="forms-sample">
                         @csrf
                       <div class="form-group">
                         <label for="exampleInputName1">Name</label>
