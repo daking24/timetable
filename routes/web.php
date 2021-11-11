@@ -6,6 +6,8 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TimeTableController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\SmsController;
 
@@ -58,6 +60,11 @@ Route::post('venue/store', [VenueController::class, 'store'])->name('venues.stor
 Route::get('/venue/view', [VenueController::class, 'index'])->name('venues.index');
 Route::get('/venue/view/edit/{id}', [VenueController::class, 'edit'])->name('venues.edit'); 
 Route::post('/venues/view/update/{id}', [VenueController::class, 'update'])->name('venues.update');
+
+Route::get('/timetable/create', [TimeTableController::class, 'showCreateForm'])->name('create.timetable');
+Route::post('/timetable/store', [TimeTableController::class, 'generate'])->name('create.timetable.post');
+Route::get('/setting/create', [SettingController::class, 'showCreateFormSetting'])->name('create.setting');
+Route::post('/setting/store', [SettingController::class, 'store'])->name('create.setting.post');
 
 
 // SMS Controller

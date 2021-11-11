@@ -180,17 +180,33 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Manage Venues</span>
+              <span class="menu-title">Time Table</span>
+
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ route('venues.create') }}">Create Venues</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('venues.index') }}">View Venues</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{ route('create.timetable')}}">Create</a></li>
+              <li class="nav-item"> <a class="nav-link" href="">View</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{ route('create.setting')}}">Settings</a></li>
+
               </ul>
             </div>
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Manage Venues</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('venues.create') }}">Create Venues</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('venues.index') }}">View Venues</a></li>
+
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>
       <div class="main-panel">
